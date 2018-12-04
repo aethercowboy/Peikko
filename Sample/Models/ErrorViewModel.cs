@@ -1,5 +1,3 @@
-using System;
-
 namespace Peikko.Models
 {
     public class ErrorViewModel
