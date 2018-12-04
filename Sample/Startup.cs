@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Peikko.Contexts;
-using Peikko.Repository.EFCore.Extensions;
-using Peikko.Service.PeikkoService.Extensions;
+using Peikko.DataAccess.EFCore.Extensions;
 using Piekko.Presentation.Extensions;
+using Sample.BusinessLogic.Extensions;
+using Sample.DataAccess.Contexts;
 
-namespace Peikko
+namespace Sample
 {
     public class Startup
     {

@@ -1,8 +1,8 @@
-﻿using Peikko.Repository.Interfaces;
+﻿using Peikko.DataAccess.Interfaces;
 using System;
 using System.Linq.Expressions;
 
-namespace Peikko.Repository.Specifications.Sorts
+namespace Peikko.DataAccess.Specifications.Sorts
 {
     public class Sort<TEntity> : ISort<TEntity>
     {

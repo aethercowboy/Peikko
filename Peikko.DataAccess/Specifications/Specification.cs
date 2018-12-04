@@ -1,9 +1,9 @@
-﻿using Peikko.Repository.Interfaces;
+﻿using Peikko.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Peikko.Repository.Specifications
+namespace Peikko.DataAccess.Specifications
 {
     public class Specification<TEntity> : ISpecification<TEntity>
     {

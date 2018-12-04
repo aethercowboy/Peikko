@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using Peikko.Repository.Interfaces;
+using Peikko.DataAccess.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Peikko.Repository.EFCore.EntityCollections
+namespace Peikko.DataAccess.EFCore.EntityCollections
 {
     internal class EntityCollection<TEntity> : IEntityCollection<TEntity>
     {

@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Peikko.Domain.Interfaces;
-using Peikko.Repository.EFCore.Contexts;
-using Peikko.Repository.EFCore.EntityCollections;
-using Peikko.Repository.Interfaces;
+using Peikko.DataAccess.EFCore.Contexts;
+using Peikko.DataAccess.EFCore.EntityCollections;
+using Peikko.DataAccess.Interfaces;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Peikko.Repository.EFCore.Repositories
+namespace Peikko.DataAccess.EFCore.Repositories
 {
     internal class Repository<TEntity, TKey> : IRepository<TEntity, TKey>
         where TEntity : class, IEntity<TKey>

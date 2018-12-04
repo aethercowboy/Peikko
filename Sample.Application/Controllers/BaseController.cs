@@ -1,8 +1,8 @@
 ﻿using Peikko.Application.Controllers;
-using Peikko.Service.PeikkoService.Services;
+using Sample.BusinessLogic.Services;
 using System;
 
-namespace Peikko.Application.PeikkoApplication.Controllers
+namespace Sample.Application.Controllers
 {
     public class BaseController<TEntity, TService> : BaseController<TEntity, TService, Guid>
         where TService : IService<TEntity>

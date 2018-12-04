@@ -1,7 +1,7 @@
-﻿using Peikko.Domain.PeikkoDomain.Models;
-using Peikko.Service.PeikkoService.Services;
+﻿using Sample.BusinessLogic.Services;
+using Sample.Domain.Models;
 
-namespace Peikko.Application.PeikkoApplication.Controllers
+namespace Sample.Application.Controllers
 {
     public class PublisherController : BaseController<Publisher, IPublisherService>
     {

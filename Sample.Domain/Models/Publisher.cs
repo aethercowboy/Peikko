@@ -1,6 +1,6 @@
-﻿using Peikko.Domain.PeikkoDomain.Interfaces;
+﻿using Sample.Domain.Interfaces;
 
-namespace Peikko.Domain.PeikkoDomain.Models
+namespace Sample.Domain.Models
 {
     public interface IPublisher : IEntity
     {

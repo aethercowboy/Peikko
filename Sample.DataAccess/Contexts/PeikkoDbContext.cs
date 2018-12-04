@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Peikko.Domain.PeikkoDomain.Models;
-using Peikko.Repository.EFCore.Contexts;
+using Peikko.DataAccess.EFCore.Contexts;
+using Sample.Domain.Models;
 
-namespace Peikko.Contexts
+namespace Sample.DataAccess.Contexts
 {
     public class PeikkoDbContext : EFCoreDbContext
     {

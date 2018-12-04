@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Peikko.Models;
+using Sample.Models;
 using System.Diagnostics;
 
-namespace Peikko.Controllers
+namespace Sample.Controllers
 {
     public class HomeController : Controller
     {

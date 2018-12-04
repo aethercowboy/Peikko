@@ -1,4 +1,4 @@
-﻿namespace Peikko.Service.Interfaces
+﻿namespace Peikko.BusinessLogic.Interfaces
 {
     public interface IRule<TEntity>
     {

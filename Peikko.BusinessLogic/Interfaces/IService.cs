@@ -1,6 +1,6 @@
-﻿using Peikko.Repository.Interfaces;
+﻿using Peikko.DataAccess.Interfaces;
 
-namespace Peikko.Service.Interfaces
+namespace Peikko.BusinessLogic.Interfaces
 {
     public interface IService<TEntity, TKey>
     {

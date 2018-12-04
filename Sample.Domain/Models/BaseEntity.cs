@@ -1,7 +1,7 @@
-﻿using Peikko.Domain.PeikkoDomain.Interfaces;
+﻿using Sample.Domain.Interfaces;
 using System;
 
-namespace Peikko.Domain.PeikkoDomain.Models
+namespace Sample.Domain.Models
 {
     public abstract class BaseEntity : IEntity
     {

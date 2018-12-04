@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Peikko.Service.Interfaces;
+using Peikko.BusinessLogic.Interfaces;
 
 namespace Peikko.Application.Controllers
 {

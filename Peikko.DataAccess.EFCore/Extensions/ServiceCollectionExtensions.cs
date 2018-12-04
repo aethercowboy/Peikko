@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Peikko.Repository.EFCore.Contexts;
-using Peikko.Repository.EFCore.Repositories;
-using Peikko.Repository.Interfaces;
+using Peikko.DataAccess.EFCore.Contexts;
+using Peikko.DataAccess.EFCore.Repositories;
+using Peikko.DataAccess.Interfaces;
 
-namespace Peikko.Repository.EFCore.Extensions
+namespace Peikko.DataAccess.EFCore.Extensions
 {
     public static class ServiceCollectionExtensions
     {

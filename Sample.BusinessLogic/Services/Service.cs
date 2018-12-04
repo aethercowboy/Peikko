@@ -1,10 +1,10 @@
-﻿using Peikko.Domain.PeikkoDomain.Interfaces;
-using Peikko.Repository.Interfaces;
-using Peikko.Service.Interfaces;
-using Peikko.Service.Services;
+﻿using Peikko.BusinessLogic.Interfaces;
+using Peikko.BusinessLogic.Services;
+using Peikko.DataAccess.Interfaces;
+using Sample.Domain.Interfaces;
 using System;
 
-namespace Peikko.Service.PeikkoService.Services
+namespace Sample.BusinessLogic.Services
 {
     public interface IService<TEntity> : IService<TEntity, Guid>
     {

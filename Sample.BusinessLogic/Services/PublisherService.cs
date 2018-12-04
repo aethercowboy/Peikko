@@ -1,9 +1,9 @@
-﻿using Peikko.Domain.PeikkoDomain.Models;
-using Peikko.Repository.Interfaces;
-using Peikko.Service.Interfaces;
+﻿using Peikko.BusinessLogic.Interfaces;
+using Peikko.DataAccess.Interfaces;
+using Sample.Domain.Models;
 using System;
 
-namespace Peikko.Service.PeikkoService.Services
+namespace Sample.BusinessLogic.Services
 {
     public interface IPublisherService : IService<Publisher>
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Peikko.Service.Extensions;
-using Peikko.Service.PeikkoService.Services;
+using Peikko.BusinessLogic.Extensions;
+using Sample.BusinessLogic.Services;
 
-namespace Peikko.Service.PeikkoService.Extensions
+namespace Sample.BusinessLogic.Extensions
 {
     public static class ServiceCollectionExtensions
     {

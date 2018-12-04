@@ -1,9 +1,9 @@
 ﻿using Peikko.Domain.Interfaces;
-using Peikko.Repository.Interfaces;
-using Peikko.Service.Interfaces;
+using Peikko.DataAccess.Interfaces;
+using Peikko.BusinessLogic.Interfaces;
 using System.ComponentModel;
 
-namespace Peikko.Service.Services
+namespace Peikko.BusinessLogic.Services
 {
     [DataObject]
     public abstract class Service<TEntity, TKey> : IService<TEntity, TKey>

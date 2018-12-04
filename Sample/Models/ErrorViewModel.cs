@@ -1,4 +1,4 @@
-namespace Peikko.Models
+namespace Sample.Models
 {
     public class ErrorViewModel
     {

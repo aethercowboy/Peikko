@@ -1,10 +1,10 @@
 ﻿using Peikko.Domain.Interfaces;
-using Peikko.Service.Interfaces;
+using Peikko.BusinessLogic.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Peikko.Service.Factories
+namespace Peikko.BusinessLogic.Factories
 {
     public class RuleFactory<TEntity, TKey> : IRuleCollection<TEntity, TKey>
         where TEntity : IEntity<TKey>

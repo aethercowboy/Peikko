@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Peikko.Repository.EFCore.Contexts
+namespace Peikko.DataAccess.EFCore.Contexts
 {
     //public interface IEFCoreDbContext
     //{

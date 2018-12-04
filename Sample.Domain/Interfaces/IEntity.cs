@@ -1,7 +1,7 @@
 ﻿using Peikko.Domain.Interfaces;
 using System;
 
-namespace Peikko.Domain.PeikkoDomain.Interfaces
+namespace Sample.Domain.Interfaces
 {
     public interface IEntity : IEntity<Guid>
     {
