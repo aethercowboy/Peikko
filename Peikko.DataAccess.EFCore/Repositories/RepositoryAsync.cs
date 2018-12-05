@@ -7,62 +7,62 @@ using Peikko.Domain.Interfaces;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Peikko.DataAccess.EFCore.Repositories
 {
-    internal class Repository<TEntity, TKey> : DisposableResourceHolder, IRepository<TEntity, TKey>
+    internal class RepositoryAsync<TEntity, TKey> : DisposableResourceHolder, IRepositoryAsync<TEntity, TKey>
         where TEntity : class, IEntity<TKey>
     {
         private readonly EFCoreDbContext _dbContext;
         private DbSet<TEntity> _repository;
 
-        public Repository(EFCoreDbContext dbContext)
+        public RepositoryAsync(EFCoreDbContext dbContext)
         {
             _dbContext = dbContext;
             _repository = _dbContext.Set<TEntity>();
         }
 
-
-        public void Delete(TEntity entity)
+        public async Task DeleteAsync(TEntity entity)
         {
             _repository.Remove(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public TEntity Find(TKey id)
+        public async Task<TEntity> FindAsync(TKey id)
         {
-            return _repository.Find(id);
+            return await _repository.FindAsync(id);
         }
 
-        public TEntity Insert(TEntity entity)
+        public async Task<TEntity> InsertAsync(TEntity entity)
         {
-            var response = _repository.Add(entity);
-            _dbContext.SaveChanges();
+            var response = await _repository.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
 
             return response.Entity;
         }
 
-        public IEntityCollection<TEntity> Read()
+        public async Task<IEntityCollection<TEntity>> ReadAsync()
         {
             var entities = _repository.AsQueryable();
 
-            return new EntityCollection<TEntity>(entities);
+            return await Task.FromResult(new EntityCollection<TEntity>(entities));
         }
 
-        public IEntityCollection<TEntity> Read(Expression<Func<TEntity, bool>> predicate)
+        public async Task<IEntityCollection<TEntity>> ReadAsync(Expression<Func<TEntity, bool>> predicate)
         {
             var entities = _repository.Where(predicate);
 
-            return new EntityCollection<TEntity>(entities);
+            return await Task.FromResult(new EntityCollection<TEntity>(entities));
         }
 
-        public IEntityCollection<TEntity> Read(ISpecification<TEntity> specification)
+        public async Task<IEntityCollection<TEntity>> ReadAsync(ISpecification<TEntity> specification)
         {
             var queryableResultWithIncludes = specification.Includes
-                .Aggregate(
-                    _repository.AsQueryable(),
-                    (current, include) => current.Include(include)
-                );
+               .Aggregate(
+                   _repository.AsQueryable(),
+                   (current, include) => current.Include(include)
+               );
 
             var secondaryResult = specification.IncludeStrings
                 .Aggregate(
@@ -85,13 +85,13 @@ namespace Peikko.DataAccess.EFCore.Repositories
                     ;
             }
 
-            return new EntityCollection<TEntity>(filteredResult);
+            return await Task.FromResult(new EntityCollection<TEntity>(filteredResult));
         }
 
-        public TEntity Update(TEntity entity)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
             var response = _repository.Update(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return response.Entity;
         }

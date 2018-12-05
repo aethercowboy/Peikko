@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Peikko.Core\Peikko.Core.csproj" />
     <ProjectReference Include="..\Peikko.DataAccess\Peikko.DataAccess.csproj" />
   </ItemGroup>
 

@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Peikko.DataAccess.Interfaces
 {
-    public interface IRepository<TEntity, TKey>
+    public interface IRepository<TEntity, TKey> : IDisposable
         where TEntity : class, IEntity<TKey>
     {
         TEntity Find(TKey id);
