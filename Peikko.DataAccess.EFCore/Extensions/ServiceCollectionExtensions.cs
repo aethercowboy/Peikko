@@ -1,21 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Peikko.DataAccess.EFCore.Contexts;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Peikko.Core.Extensions;
 using Peikko.DataAccess.EFCore.Repositories;
 using Peikko.DataAccess.Interfaces;
+using Peikko.Domain.Interfaces;
+using System;
 
 namespace Peikko.DataAccess.EFCore.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddEFCoreDbContext<TContext>(this IServiceCollection services, string connectionString)
-            where TContext : EFCoreDbContext
-            =>
-            services.AddDbContext<EFCoreDbContext, TContext>(options => { options.UseSqlServer(connectionString); });
-
-        public static void AddEFCoreRepositoryInjection(this IServiceCollection services)
+        public static void AddRepositories<TEntity, TKey, TRepository>(this IServiceCollection services)
+            where TEntity : class, IEntity<TKey>
+            where TRepository : IRepository<TEntity, TKey>
         {
-            services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
+            var t = typeof(TEntity);
+
+            foreach (var type in t.GetAssignableTypes())
+            {
+                var keyType = type.GetProperty("Id").PropertyType;
+
+                var interfaceType = typeof(IRepository<,>).MakeGenericType(new Type[] { type, keyType});
+                var repoType = typeof(TRepository); // todo - coerce into TEntity Repo.
+
+                services.AddScoped(interfaceType, repoType);
+            }
+
+            //services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
         }
     }
 }

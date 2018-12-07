@@ -5,9 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Peikko.DataAccess.EFCore.Extensions;
+using Peikko.DataAccess.EFCore.SqlServer.Extensions;
 using Piekko.Presentation.Extensions;
 using Sample.BusinessLogic.Extensions;
 using Sample.DataAccess.Contexts;
+using Sample.DataAccess.Repositories;
+using Sample.Domain.Interfaces;
+using System;
 
 namespace Sample
 {
@@ -32,7 +36,7 @@ namespace Sample
 
 
             // Peikko code!
-            services.AddEFCoreDbContext<PeikkoDbContext>(Configuration.GetConnectionString("DefaultConnection"));
+            services.AddSqlDAL<PeikkoDbContext>(Configuration.GetConnectionString("DefaultConnection"));
             //
 
 
@@ -41,8 +45,8 @@ namespace Sample
 
 
             // Peikko code!
-            services.AddEFCoreRepositoryInjection();
-            services.AddPeikkoServiceInjections();
+            services.AddRepositories<IEntity, Guid, Repository<IEntity>>();
+            services.AddBusinessLogic();
             services.AddViews();
             //
         }

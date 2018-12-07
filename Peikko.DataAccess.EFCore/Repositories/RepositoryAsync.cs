@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Peikko.Core.ResourceHolders;
 using Peikko.DataAccess.EFCore.Contexts;
 using Peikko.DataAccess.EFCore.EntityCollections;
 using Peikko.DataAccess.Interfaces;
@@ -11,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace Peikko.DataAccess.EFCore.Repositories
 {
-    internal class RepositoryAsync<TEntity, TKey> : DisposableResourceHolder, IRepositoryAsync<TEntity, TKey>
+    public class RepositoryAsync<TEntity, TKey> : Repository<TEntity, TKey>, IRepositoryAsync<TEntity, TKey>
         where TEntity : class, IEntity<TKey>
     {
         private readonly EFCoreDbContext _dbContext;
         private DbSet<TEntity> _repository;
 
-        public RepositoryAsync(EFCoreDbContext dbContext)
+        public RepositoryAsync(EFCoreDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
             _repository = _dbContext.Set<TEntity>();

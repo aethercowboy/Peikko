@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Peikko.DataAccess.EFCore.SqlServer\Peikko.DataAccess.EFCore.SqlServer.csproj" />
+    <ProjectReference Include="..\Peikko.DataAccess\Peikko.DataAccess.csproj" />
     <ProjectReference Include="..\Sample.Domain\Sample.Domain.csproj" />
-    <ProjectReference Include="..\Peikko.DataAccess.EFCore\Peikko.DataAccess.EFCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

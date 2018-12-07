@@ -6,7 +6,7 @@ namespace Sample.BusinessLogic.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddPeikkoServiceInjections(this IServiceCollection services)
+        public static void AddBusinessLogic(this IServiceCollection services)
         {
             services.AddServiceInjection();
 

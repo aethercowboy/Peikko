@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace Peikko.DataAccess.EFCore.Repositories
 {
-    internal class Repository<TEntity, TKey> : DisposableResourceHolder, IRepository<TEntity, TKey>
+    public class Repository<TEntity, TKey> : DisposableResourceHolder, IRepository<TEntity, TKey>
         where TEntity : class, IEntity<TKey>
     {
         private readonly EFCoreDbContext _dbContext;
