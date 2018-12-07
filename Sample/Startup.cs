@@ -12,6 +12,7 @@ using Sample.DataAccess.Contexts;
 using Sample.DataAccess.Repositories;
 using Sample.Domain.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace Sample
 {
@@ -45,9 +46,9 @@ namespace Sample
 
 
             // Peikko code!
-            services.AddRepositories<IEntity, Guid, Repository<IEntity>>();
+            services.AddRepositories<IEntity, Guid>(typeof(Repository<>));
             services.AddBusinessLogic();
-            services.AddViews();
+            services.AddViews(new List<string>());
             //
         }
 

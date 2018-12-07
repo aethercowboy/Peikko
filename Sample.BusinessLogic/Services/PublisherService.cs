@@ -12,7 +12,7 @@ namespace Sample.BusinessLogic.Services
 
     public class PublisherService : Service<Publisher>, IPublisherService
     {
-        public PublisherService(IRepository<Publisher, Guid> repository, IRuleCollection<Publisher, Guid> rules) : base(repository, rules)
+        public PublisherService(IRepositoryAsync<Publisher, Guid> repository, IRuleCollection<Publisher, Guid> rules) : base(repository, rules)
         {
         }
     }

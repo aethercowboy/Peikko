@@ -1,0 +1,9 @@
+﻿@using Peikko.Application.Components
+
+@model IEnumerable<MenuItem>
+
+
+@foreach (var x in Model)
+{
+    <li><a asp-area="" asp-controller="@x.Controller" asp-action="Index">@x.Name</a></li>
+}

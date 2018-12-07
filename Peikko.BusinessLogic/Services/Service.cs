@@ -1,6 +1,6 @@
-﻿using Peikko.Domain.Interfaces;
+﻿using Peikko.BusinessLogic.Interfaces;
 using Peikko.DataAccess.Interfaces;
-using Peikko.BusinessLogic.Interfaces;
+using Peikko.Domain.Interfaces;
 using System.ComponentModel;
 
 namespace Peikko.BusinessLogic.Services
@@ -9,10 +9,10 @@ namespace Peikko.BusinessLogic.Services
     public abstract class Service<TEntity, TKey> : IService<TEntity, TKey>
         where TEntity : class, IEntity<TKey>
     {
-        protected readonly IRepository<TEntity, TKey> _repository;
+        protected readonly IRepositoryAsync<TEntity, TKey> _repository;
         protected readonly IRuleCollection<TEntity, TKey> _rules;
 
-        protected Service(IRepository<TEntity, TKey> repository, IRuleCollection<TEntity, TKey> rules)
+        protected Service(IRepositoryAsync<TEntity, TKey> repository, IRuleCollection<TEntity, TKey> rules)
         {
             _repository = repository;
             _rules = rules;

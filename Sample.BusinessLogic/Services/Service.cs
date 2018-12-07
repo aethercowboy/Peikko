@@ -14,7 +14,7 @@ namespace Sample.BusinessLogic.Services
     public class Service<TEntity> : Service<TEntity, Guid>
         where TEntity : class, IEntity
     {
-        public Service(IRepository<TEntity, Guid> repository, IRuleCollection<TEntity, Guid> rules) : base(repository, rules)
+        public Service(IRepositoryAsync<TEntity, Guid> repository, IRuleCollection<TEntity, Guid> rules) : base(repository, rules)
         {
         }
     }

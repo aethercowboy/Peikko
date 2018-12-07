@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Humanizer" Version="2.5.16" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.1.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Peikko.BusinessLogic\Peikko.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Peikko.Core\Peikko.Core.csproj" />
   </ItemGroup>
 
 </Project>

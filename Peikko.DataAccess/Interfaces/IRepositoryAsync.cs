@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Peikko.DataAccess.Interfaces
 {
-    public interface IRepositoryAsync<TEntity, TKey> : IDisposable
+    public interface IRepositoryAsync<TEntity, TKey> : IRepository<TEntity, TKey>, IDisposable
         where TEntity : class, IEntity<TKey>
 
     {

@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sample.Application.Controllers;
 using Sample.Models;
 using System.Diagnostics;
 
 namespace Sample.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {

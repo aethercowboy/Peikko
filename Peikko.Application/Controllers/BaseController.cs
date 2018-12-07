@@ -1,9 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Peikko.BusinessLogic.Interfaces;
 
 namespace Peikko.Application.Controllers
 {
-    public class BaseController<TEntity, TService, TKey> : Controller
+    public class BaseController : Controller
+    {
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            base.OnActionExecuting(context);
+
+            ViewData["SiteName"] = "Peikko";
+        }
+    }
+
+    public class BaseController<TEntity, TService, TKey> : BaseController
         where TService : IService<TEntity, TKey>
     {
         protected readonly TService _service;
